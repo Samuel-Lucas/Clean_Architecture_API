@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevFreela.Core.Entities;
 
 namespace DevFreela.Infrastructure.Persistence
 {
@@ -23,7 +24,7 @@ namespace DevFreela.Infrastructure.Persistence
                 new User("Emanuel", "emanuel@email.com", new DateTime(1999, 1, 1))
             };
 
-            Skill = new List<Skill>
+            Skills = new List<Skill>
             {
                 new Skill(".NET Core"),
                 new Skill("Angular"),
