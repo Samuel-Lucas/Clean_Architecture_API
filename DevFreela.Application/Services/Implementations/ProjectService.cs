@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DevFreela.Application.InputModels;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
@@ -61,14 +59,14 @@ namespace DevFreela.Application.Services.Implementations
             var projects = _dbContext.Projects;
 
             var projectsViewModel = projects
-                .Select(p => new ProjectViewModel(p.Title, p.CreatedAt)).ToList();
+                .Select(p => new ProjectViewModel(p.Id, p.Title, p.CreatedAt)).ToList();
             
             return projectsViewModel;
         }
 
         public ProjectDetailsViewModel GetById(int id)
         {
-            var project = _dbContext.Projects.SingleOrDefault<Project>(i => i.Id == id);
+            var project = _dbContext.Projects.SingleOrDefault(i => i.Id == id);
 
             var projectDetailsViewModel = new ProjectDetailsViewModel(
                 project.Id,
@@ -84,13 +82,13 @@ namespace DevFreela.Application.Services.Implementations
 
         public void Start(int id)
         {
-            var project = _dbContext.Projects.SingleOrDefault<Project>(i => i.Id == id);
+            var project = _dbContext.Projects.SingleOrDefault(i => i.Id == id);
             project.Start();
         }
 
         public void Finish(int id)
         {
-            var project = _dbContext.Projects.SingleOrDefault<Project>(i => i.Id == id);
+            var project = _dbContext.Projects.SingleOrDefault(i => i.Id == id);
             project.Finish();
         }
     }
