@@ -1,14 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DevFreela.Application.InputModels;
+using DevFreela.Application.ViewModels;
 
 namespace DevFreela.Application.Services.Interfaces
 {
     public interface IUserService
     {
-        void Post(CreateUserModel inputModel);
-        User GetById(int id);
-        void Update(int id, LoginModel);
+        void Post(CreateUserInputModel inputModel);
+        UserViewModel GetById(int id);
+        void Update(int id, LoginInputModel inputModel);
     }
 }

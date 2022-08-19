@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.API", "DevFreela.API\DevFreela.API.csproj", "{43DDE015-8B81-4BB6-A5F0-4FA585A92F5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{399117D2-5512-4810-9E6E-848A30F5B3A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{8008196F-5A06-42C6-9BEF-B20072E3F129}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{60315764-C6EA-41D9-A2CE-AC7F97238E96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{43DDE015-8B81-4BB6-A5F0-4FA585A92F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43DDE015-8B81-4BB6-A5F0-4FA585A92F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43DDE015-8B81-4BB6-A5F0-4FA585A92F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{399117D2-5512-4810-9E6E-848A30F5B3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399117D2-5512-4810-9E6E-848A30F5B3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399117D2-5512-4810-9E6E-848A30F5B3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399117D2-5512-4810-9E6E-848A30F5B3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8008196F-5A06-42C6-9BEF-B20072E3F129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8008196F-5A06-42C6-9BEF-B20072E3F129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8008196F-5A06-42C6-9BEF-B20072E3F129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8008196F-5A06-42C6-9BEF-B20072E3F129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60315764-C6EA-41D9-A2CE-AC7F97238E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60315764-C6EA-41D9-A2CE-AC7F97238E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60315764-C6EA-41D9-A2CE-AC7F97238E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60315764-C6EA-41D9-A2CE-AC7F97238E96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

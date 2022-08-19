@@ -54,7 +54,7 @@ namespace DevFreela.Application.Services.Implementations
             project.Update(inputModel.Title, inputModel.Description, inputModel.TotalCost);
         }
 
-        public List<ProjectViewModel> GetAll(string query)
+        public List<ProjectViewModel> GetAll()
         {
             var projects = _dbContext.Projects;
 

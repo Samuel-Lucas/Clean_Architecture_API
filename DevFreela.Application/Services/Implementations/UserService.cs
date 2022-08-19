@@ -1,4 +1,8 @@
+using System.Linq;
+using DevFreela.Application.InputModels;
 using DevFreela.Application.Services.Interfaces;
+using DevFreela.Application.ViewModels;
+using DevFreela.Core.Entities;
 using DevFreela.Infrastructure.Persistence;
 
 namespace DevFreela.Application.Services.Implementations
@@ -12,17 +16,33 @@ namespace DevFreela.Application.Services.Implementations
             _dbContext = dbContext;
         }
 
-        public User GetById(int id)
+        public UserViewModel GetById(int id)
         {
-            throw new System.NotImplementedException();
+            var user = _dbContext.Users.SingleOrDefault(i => i.Id == id);
+
+            var usersViewModel = new UserViewModel(
+                user.Id,
+                user.FullName,
+                user.Email,
+                user.BirthDate
+            );
+
+            return usersViewModel;
         }
 
-        public void Post(CreateUserModel inputModel)
+        public void Post(CreateUserInputModel inputModel)
         {
-            throw new System.NotImplementedException();
+            var user = new User(
+                inputModel.FullName,
+                inputModel.Email,
+                inputModel.Password,
+                inputModel.BirthDate
+            );
+
+            _dbContext.Users.Add(user);
         }
 
-        public void Update(int id, LoginModel inputModel)
+        public void Update(int id, LoginInputModel inputModel)
         {
             throw new System.NotImplementedException();
         }
