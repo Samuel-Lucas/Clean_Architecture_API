@@ -1,40 +1,30 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 using DevFreela.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevFreela.Infrastructure.Persistence
 {
-    public class DevFreelaDbContext
+    public class DevFreelaDbContext : DbContext
     {
-        public  DevFreelaDbContext()
+        public  DevFreelaDbContext(DbContextOptions<DevFreelaDbContext> options) : base()
         {
-            Projects = new List<Project>
-            {
-                new Project("Meu projeto ASPNET CORE 1", "Descrição 1", 1, 1, 1000),
-                new Project("Meu projeto ASPNET CORE 2", "Descrição 2", 1, 1, 2000),
-                new Project("Meu projeto ASPNET CORE 3", "Descrição 3", 1, 1, 3000)
-            };
-
-            Users = new List<User>
-            {
-                new User("Samuel", "samuel@email.com", "pass1", new DateTime(1996, 1, 1)),
-                new User("Lucas", "lucas@email.com", "pass3", new DateTime(1997, 1, 1)),
-                new User("Emanuel", "emanuel@email.com", "pass3", new DateTime(1999, 1, 1))
-            };
-
-            Skills = new List<Skill>
-            {
-                new Skill(".NET Core"),
-                new Skill("Angular"),
-                new Skill("Python"),
-            };
         }
 
-        public List<Project> Projects { get; set; }
-        public List<User> Users { get; set; }
-        public List<Skill> Skills { get; set; }
-        public List<ProjectComment> ProjectComments { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<Skill> UserSkills { get; set; }
+        public DbSet<ProjectComment> ProjectComments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); // referencia Assembly chcar se é correto
+            
+            modelBuilder.Entity<Skill>()
+                .HasKey(s => s.Id);
+            
+            modelBuilder.Entity<UserSkill>()
+                .HasKey(s => s.Id);
+        }
     }
 }
